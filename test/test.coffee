@@ -8,6 +8,6 @@ describe 'signature plugin', ->
 
   describe 'expand', ->
 
-    it 'can make itallic', ->
+    it 'can no loner make itallic', ->
       result = signature.expand 'hello *world*'
-      expect(result).to.be 'hello <i>world</i>'
+      expect(result).to.be 'hello *world*'

@@ -4,13 +4,14 @@ expand = (text) ->
     .replace /&/g, '&amp;'
     .replace /</g, '&lt;'
     .replace />/g, '&gt;'
-    .replace /\*(.+?)\*/g, '<i>$1</i>'
+
+page = ($item) ->
+  $item.parents('.page').data('data')
 
 check = ($item) ->
   # https://www.npmjs.com/package/object-hash ?
   sum = 0
-  page = $item.parents('.page').data('data')
-  for item in page.story
+  for item in page($item).story
     sum *= 3
     if item.type == 'signature'
       sum += item.text.length
@@ -58,11 +59,12 @@ bind = ($item, item) ->
 
   $item.find('button').click ->
     date = Date.now()
+    rev = page($item).journal.length-1
+    algo = 'trivial'
     sum = check $item
-    item.algo = 'trivial'
     item.signatures ||= {}
     item.signatures[location.host] ||= {}
-    item.signatures[location.host][sum] = {sum, date}
+    item.signatures[location.host][sum] = {date, rev, algo, sum}
     $item.empty()
     emit $item, item
     bind $item, item
