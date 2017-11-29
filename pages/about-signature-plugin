@@ -1,0 +1,37 @@
+{
+  "title": "About Signature Plugin",
+  "story": [
+  {
+    "type": "paragraph",
+    "id": "7a391b48479eb39e",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "signature",
+    "id": "d451e38f3de32350",
+    "text": "This is text in the new plugin. You can *double-click* to edit it too."
+  }
+],
+  "journal": [
+  {
+    "type": "create",
+    "item": {
+      "title": "About Signature Plugin",
+      "story": [
+  {
+    "type": "paragraph",
+    "id": "7a391b48479eb39e",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "signature",
+    "id": "d451e38f3de32350",
+    "text": "This is text in the new plugin. You can *double-click* to edit it too."
+  }
+]
+    },
+    "date": 1511927648000,
+    "certificate": "from mkplugin.sh"
+  }
+]
+}
