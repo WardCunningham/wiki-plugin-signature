@@ -1,4 +1,6 @@
 
+crypto = require 'crypto'
+
 expand = (text) ->
   text
     .replace /&/g, '&amp;'
@@ -10,15 +12,15 @@ page = ($item) ->
 
 check = ($item) ->
   # https://www.npmjs.com/package/object-hash ?
-  sum = 0
+  # https://docs.nodejitsu.com/articles/cryptography/how-to-use-crypto-module/
+
+  sum = crypto.createHash 'md5'
   for item in page($item).story
-    sum *= 3
     if item.type == 'signature'
-      sum += item.text.length
+      sum.update item.text
     else
-      sum += JSON.stringify(item).length
-    sum %= 1000000
-  sum
+      sum.update JSON.stringify(item)
+  sum.digest 'hex'
 
 emit = ($item, item) ->
 

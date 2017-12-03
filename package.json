@@ -1,6 +1,6 @@
 {
   "name": "wiki-plugin-signature",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Federated Wiki - Signature Plugin",
   "keywords": [
     "signature",
@@ -18,13 +18,17 @@
     "test": "mocha"
   },
   "devDependencies": {
+    "coffee-script": "^1.12.7",
+    "coffeeify": "^3.0.0",
+    "coffeescript": "^1.12.7",
+    "expect.js": "^0.3.1",
     "grunt": "^1.0.1",
-    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-git-authors": "^3.2.0",
-    "mocha": "^3.1.0",
-    "expect.js": "^0.3.1",
-    "grunt-mocha-test": "^0.13.2"
+    "grunt-mocha-test": "^0.13.3",
+    "mocha": "^4.0.1"
   },
   "license": "MIT",
   "repository": {
@@ -36,5 +40,8 @@
   },
   "engines": {
     "node": ">=0.10"
+  },
+  "dependencies": {
+    "crypto-browserify": "^3.12.0"
   }
 }
